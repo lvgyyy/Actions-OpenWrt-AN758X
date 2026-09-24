@@ -246,7 +246,7 @@ jobs:
 
         echo "===== PON 组件实际状态 ====="
         grep -E "^CONFIG_PACKAGE_(kmod-airoha-(xpon|pon-frontend|en7572|paged-bosa)|airoha-(pond|ponctl|pon-debug)|luci-app-(pon|iptv))=" .config || true
-        cat .config
+        cat .config | grep -v -E '^#|^$'
         [ "$fail" = "0" ] || exit 1
 
     # =========================================================
