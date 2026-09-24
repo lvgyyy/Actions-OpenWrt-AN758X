@@ -99,3 +99,5 @@ git clone --depth=1 https://github.com/eamonxg/luci-app-aurora-config.git packag
 
 git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat.git package/custom/luci-theme-kucat
 git clone --depth=1 https://github.com/sirpdboy/luci-app-kucat-config.git package/custom/luci-app-kucat-config
+
+git clone --depth=1 https://github.com/LazuliKao/luci-theme-fluent.git package/custom/luci-theme-fluent
