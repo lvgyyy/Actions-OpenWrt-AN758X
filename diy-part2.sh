@@ -5,11 +5,6 @@ set -e
 
 CFG=".config"
 
-# 主机名
-if [ -f package/base-files/files/bin/config_generate ]; then
-    sed -i 's/ImmortalWrt/PonWrt/g' package/base-files/files/bin/config_generate
-fi
-
 # 时区
 if [ -f package/base-files/files/etc/config/system ]; then
     sed -i "s#option timezone 'UTC'#option timezone 'CST-8'#" package/base-files/files/etc/config/system
