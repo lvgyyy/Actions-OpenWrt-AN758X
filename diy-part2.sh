@@ -20,4 +20,8 @@ uci -q commit firewall
 exit 0
 EOF
 
+# 修改mac
+sed -i 's/macaddr_factory_3e (0)/macaddr_factory_3e (2)/g' target/linux/airoha/dts/an758x-nokia_xg-040g-common.dtsi
+sed -i 's/macaddr_factory_3e (0)/macaddr_factory_3e (1)/g' target/linux/airoha/dts/an7581-nokia_xg-040g-md-common.dtsi
+
 echo "[diy-part2] 完成"
