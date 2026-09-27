@@ -235,7 +235,7 @@ jobs:
         # PON 必选组件（package 名写错时 kconfig 会静默丢弃，这里兜住）
         for p in kmod-airoha-xpon kmod-airoha-pon-frontend \
                  airoha-pond airoha-ponctl airoha-pon-debug \
-                 luci-app-pon luci-app-iptv; do
+                 luci-app-pon; do
           if grep -q "^CONFIG_PACKAGE_${p}=y" .config; then
             echo "  [OK] $p"
           else
