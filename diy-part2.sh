@@ -11,6 +11,12 @@ if [ -f package/base-files/files/etc/config/system ]; then
     sed -i "s#option zonename 'UTC'#option zonename 'Asia/Shanghai'#" package/base-files/files/etc/config/system
 fi
 
+# 主机名
+if [ -f package/base-files/files/bin/config_generate ]; then
+    sed -i 's/ponwrt/ImmortalWrt/g' package/base-files/files/bin/config_generate
+    cat package/base-files/files/bin/config_generate
+fi
+
 # 默认开启硬件流卸载（AN7581 PPE / NPU）
 mkdir -p files/etc/uci-defaults
 cat > files/etc/uci-defaults/99-pon-offload <<'EOF'
