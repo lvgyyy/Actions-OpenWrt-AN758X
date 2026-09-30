@@ -17,6 +17,9 @@ if [ -f package/base-files/files/bin/config_generate ]; then
     cat package/base-files/files/bin/config_generate
 fi
 
+# MAC
+sed -i 's/macaddr_factory_3e 0/macaddr_factory_3e 2/g' target/linux/airoha/dts/an758x-nokia_xg-040g-common.dtsi
+
 # 默认开启硬件流卸载（AN7581 PPE / NPU）
 mkdir -p files/etc/uci-defaults
 cat > files/etc/uci-defaults/99-pon-offload <<'EOF'
