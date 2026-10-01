@@ -10,7 +10,7 @@ add_feed() {
     local name="$1" line="$2"
     if grep -qE "^src-git[[:space:]]+${name}[[:space:]]" "$FEED_FILE" 2>/dev/null; then
         echo "[diy-part1] ${name} 已存在，删除对应行重新添加"
-        sed -i '/\${name}/d' "$FEED_FILE"
+        sed -i "/${name}/d" "$FEED_FILE"
     fi
 
     echo "$line" >> "$FEED_FILE"
