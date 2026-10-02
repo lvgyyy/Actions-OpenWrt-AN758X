@@ -17,9 +17,6 @@ add_feed() {
     echo "[diy-part1] 已添加 ${name}"
 }
 
-add_feed "pon_drivers"   "src-git pon_drivers https://github.com/pbs05/openwrt-pon-drivers.git"
-add_feed "pon_userspace" "src-git pon_userspace https://github.com/lvgyyy/openwrt-pon-userspace.git"
-
 add_feed "fluent" "src-git fluent https://github.com/LazuliKao/luci-theme-fluent.git"
 add_feed "airoha_npu" "src-git airoha_npu https://github.com/rchen14b/luci-app-airoha-npu.git"
 
