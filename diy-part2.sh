@@ -36,4 +36,13 @@ uci -q commit firewall
 exit 0
 EOF
 
+# openwrt-sonic-fullcone
+sed -i 's/+kmod-nft-fullcone//g' package/network/config/firewall4/Makefile
+rm -rf package/network/config/firewall4/patches/001-firewall4-add-support-for-fullcone-nat.patch
+rm -rf package/network/utils/fullconenat-nft/
+sed -i '272d' feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci
+sed -i '58,62d' feeds/luci/applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js
+
+sh feeds/fullcone/add_sonic_fullcone.sh
+
 echo "[diy-part2] 完成"
