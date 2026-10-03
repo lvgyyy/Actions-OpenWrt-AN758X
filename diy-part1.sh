@@ -19,6 +19,7 @@ add_feed() {
 
 add_feed "fluent" "src-git fluent https://github.com/LazuliKao/luci-theme-fluent.git"
 add_feed "airoha_npu" "src-git airoha_npu https://github.com/rchen14b/luci-app-airoha-npu.git"
+add_feed "fullcone" "src-git fullcone https://github.com/mufeng05/openwrt-sonic-fullcone.git"
 
 echo "[diy-part1] 当前 feeds 配置："
 cat "$FEED_FILE"
