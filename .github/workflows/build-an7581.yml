@@ -172,6 +172,7 @@ jobs:
         cd openwrt
         if [ -f "$GITHUB_WORKSPACE/$DIY_P3_SH" ]; then
           cp "$GITHUB_WORKSPACE/$DIY_P3_SH" ./
+          dos2unix "$DIY_P3_SH"
           chmod +x "$DIY_P3_SH"
           ./$DIY_P3_SH || echo "::warning::$DIY_P3_SH 执行中有命令失败，继续流程"
         else
