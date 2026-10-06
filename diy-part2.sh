@@ -19,13 +19,20 @@ fi
 
 # MAC修改
 # 040G
-sed -i 's/macaddr_factory_3e 0/macaddr_factory_3e 2/g' target/linux/airoha/dts/an758x-nokia_xg-040g-common.dtsi
+if [ -f target/linux/airoha/dts/an758x-nokia_xg-040g-common.dtsi ]; then
+    sed -i 's/macaddr_factory_3e 0/macaddr_factory_3e 2/g' target/linux/airoha/dts/an758x-nokia_xg-040g-common.dtsi
+fi
 
 # 5382A
-sed -i '/reg = <0x2000 0x0006>;/a\#nvmem-cell-cells = <1>;' target/linux/airoha/dts/an7581-fiberhome-ubi-parts.dtsi
-sed -i '1,/fiberhome_base_mac>/s/fiberhome_base_mac>/fiberhome_base_mac 0>/' target/linux/airoha/dts/an7581-fiberhome-hg5382a.dts
-sed -i '1,/fiberhome_base_mac>/s/fiberhome_base_mac>/fiberhome_base_mac 1>/' target/linux/airoha/dts/an7581-fiberhome-hg5382a.dts
-sed -i '1,/fiberhome_base_mac>/s/fiberhome_base_mac>/fiberhome_base_mac 2>/' target/linux/airoha/dts/an7581-fiberhome-hg5382a.dts
+if [ -f target/linux/airoha/dts/an7581-fiberhome-ubi-parts.dtsi ]; then
+    sed -i '/reg = <0x2000 0x0006>;/a\#nvmem-cell-cells = <1>;' target/linux/airoha/dts/an7581-fiberhome-ubi-parts.dtsi
+fi
+
+if [ -f  target/linux/airoha/dts/an7581-fiberhome-hg5382a.dts ]; then
+   sed -i '1,/fiberhome_base_mac>/s/fiberhome_base_mac>/fiberhome_base_mac 0>/' target/linux/airoha/dts/an7581-fiberhome-hg5382a.dts
+   sed -i '1,/fiberhome_base_mac>/s/fiberhome_base_mac>/fiberhome_base_mac 1>/' target/linux/airoha/dts/an7581-fiberhome-hg5382a.dts
+   sed -i '1,/fiberhome_base_mac>/s/fiberhome_base_mac>/fiberhome_base_mac 2>/' target/linux/airoha/dts/an7581-fiberhome-hg5382a.dts
+fi
 
 # 默认开启硬件流卸载（AN7581 PPE / NPU）
 mkdir -p files/etc/uci-defaults
