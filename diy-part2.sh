@@ -52,9 +52,4 @@ sed -i '58,62d' feeds/luci/applications/luci-app-firewall/htdocs/luci-static/res
 
 sh feeds/fullcone/add_sonic_fullcone.sh
 
-# MVRP
-echo "CONFIG_VLAN_8021Q_MVRP=y" >> target/linux/airoha/an7581/config-6.18
-echo "CONFIG_MRP=y" >> target/linux/airoha/an7581/config-6.18
-echo "CONFIG_BRIDGE_MRP=y" >> target/linux/airoha/an7581/config-6.18
-
 echo "[diy-part2] 完成"
