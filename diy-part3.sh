@@ -16,3 +16,18 @@ git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/custom
 git clone --depth=1 https://github.com/janvanstiphout/luci-app-accesscontrol.git package/custom/accesscontrol
 
 git clone --depth=1 https://github.com/luanmuc/luci-app-airoha-npu.git package/custom/luci-app-airoha-npu
+
+git clone --depth=1 https://github.com/svenshi/luci-app-oxidns.git package/custom/luci-app-oxidns
+
+wget https://github.com/lvgyyy/oxidns-build/releases/latest/download/oxidns-aarch64-unknown-linux-musl.tar.gz
+
+tar -xzvf oxidns-aarch64-unknown-linux-musl.tar.gz
+
+mkdir -pv target/linux/mediatek/filogic/base-files/etc/config
+mkdir -pv target/linux/mediatek/filogic/base-files/etc/oxidns
+mkdir -pv target/linux/mediatek/filogic/base-files/usr/bin
+
+cp -arfv oxidns-aarch64-unknown-linux-musl/config.yaml target/linux/mediatek/filogic/base-files/etc/oxidns/
+cp -arfv oxidns-aarch64-unknown-linux-musl/oxidns target/linux/mediatek/filogic/base-files/usr/bin/
+
+cp -arfv package/custom/luci-app-oxidns/root/* target/linux/mediatek/filogic/base-files/
