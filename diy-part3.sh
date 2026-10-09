@@ -27,7 +27,7 @@ mkdir -pv target/linux/mediatek/filogic/base-files/etc/config
 mkdir -pv target/linux/mediatek/filogic/base-files/etc/oxidns
 mkdir -pv target/linux/mediatek/filogic/base-files/usr/bin
 
-cp -arfv oxidns-aarch64-unknown-linux-musl/config.yaml target/linux/mediatek/filogic/base-files/etc/oxidns/
-cp -arfv oxidns-aarch64-unknown-linux-musl/oxidns target/linux/mediatek/filogic/base-files/usr/bin/
+cp -arfv config.yaml target/linux/mediatek/filogic/base-files/etc/oxidns/
+cp -arfv oxidns target/linux/mediatek/filogic/base-files/usr/bin/
 
-cp -arfv package/custom/luci-app-oxidns/root/* target/linux/mediatek/filogic/base-files/
+cp -arfv package/custom/luci-app-oxidns/root/etc/* target/linux/mediatek/filogic/base-files/etc/
