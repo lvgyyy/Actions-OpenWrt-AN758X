@@ -31,3 +31,12 @@ cp -arfv config.yaml target/linux/mediatek/filogic/base-files/etc/oxidns/
 cp -arfv oxidns target/linux/mediatek/filogic/base-files/usr/bin/
 
 cp -arfv package/custom/luci-app-oxidns/root/etc/* target/linux/mediatek/filogic/base-files/etc/
+
+mkdir -pv target/linux/qualcommbe/base-files/etc/config
+mkdir -pv target/linux/qualcommbe/base-files/etc/oxidns
+mkdir -pv target/linux/qualcommbe/base-files/usr/bin
+
+cp -arfv config.yaml target/linux/qualcommbe/base-files/etc/oxidns/
+cp -arfv oxidns target/linux/qualcommbe/base-files/usr/bin/
+
+cp -arfv package/custom/luci-app-oxidns/root/etc/* target/linux/qualcommbe/base-files/etc/
