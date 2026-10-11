@@ -26,17 +26,23 @@ tar -xzvf oxidns-aarch64-unknown-linux-musl.tar.gz
 mkdir -pv target/linux/mediatek/filogic/base-files/etc/config
 mkdir -pv target/linux/mediatek/filogic/base-files/etc/oxidns
 mkdir -pv target/linux/mediatek/filogic/base-files/usr/bin
+mkdir -pv target/linux/mediatek/filogic/base-files/lib/upgrade/keep.d
 
 cp -arfv config.yaml target/linux/mediatek/filogic/base-files/etc/oxidns/
 cp -arfv oxidns target/linux/mediatek/filogic/base-files/usr/bin/
 
 cp -arfv package/custom/luci-app-oxidns/root/etc/* target/linux/mediatek/filogic/base-files/etc/
 
+echo "/etc/oxidns/" > target/linux/mediatek/filogic/base-files/lib/upgrade/keep.d/oxidns
+
 mkdir -pv target/linux/qualcommbe/base-files/etc/config
 mkdir -pv target/linux/qualcommbe/base-files/etc/oxidns
 mkdir -pv target/linux/qualcommbe/base-files/usr/bin
+mkdir -pv target/linux/qualcommbe/base-files/lib/upgrade/keep.d
 
 cp -arfv config.yaml target/linux/qualcommbe/base-files/etc/oxidns/
 cp -arfv oxidns target/linux/qualcommbe/base-files/usr/bin/
 
 cp -arfv package/custom/luci-app-oxidns/root/etc/* target/linux/qualcommbe/base-files/etc/
+
+echo "/etc/oxidns/" > target/linux/qualcommbe/base-files/lib/upgrade/keep.d/oxidns
