@@ -3623,7 +3623,7 @@ define Device/beeconx_bg2509xs-p
   DEVICE_MODEL := BG2509XS-P
   DEVICE_DTS := mt7987b-beeconx-bg2509xs-p
   DEVICE_DTS_DIR := ../dts
-  DEVICE_PACKAGES := kmod-phy-airoha-en8811h mt7987-2p5g-phy-firmware kmod-dsa-rtl837x
+  DEVICE_PACKAGES := kmod-phy-airoha-en8811h mt7987-2p5g-phy-firmware kmod-dsa-rtl837x -wpad-openssl
   KERNEL_SIZE := 6291456
   IMAGE_SIZE  := 32112640
   IMAGES := sysupgrade.bin factory.bin
