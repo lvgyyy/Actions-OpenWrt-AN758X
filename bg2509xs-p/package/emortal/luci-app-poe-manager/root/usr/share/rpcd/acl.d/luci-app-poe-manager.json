@@ -1,0 +1,33 @@
+{
+	"luci-app-poe-manager": {
+		"description": "Grant LuCI access to PoE control and status",
+		"read": {
+			"ubus": {
+				"system": [
+					"board"
+				]
+			},
+			"uci": [
+				"poe-manager"
+			],
+			"file": {
+				"/usr/libexec/poe-manager-status": [
+					"exec"
+				],
+				"/usr/libexec/poe-manager-log": [
+					"exec"
+				]
+			}
+		},
+		"write": {
+			"uci": [
+				"poe-manager"
+			],
+			"file": {
+				"/usr/libexec/poe-manager-log-clear": [
+					"exec"
+				]
+			}
+		}
+	}
+}

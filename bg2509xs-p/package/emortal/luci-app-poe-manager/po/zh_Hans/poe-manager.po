@@ -1,0 +1,145 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: luci-app-poe-manager 20260918\n"
+"PO-Revision-Date: 2026-09-18 18:53+0800\n"
+"Last-Translator: ImmortalWrt PoE maintainers\n"
+"Language-Team: Simplified Chinese\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:215
+msgid "Clear PoE log"
+msgstr "清空日志"
+
+#: luci-app-poe-manager/root/usr/share/luci/menu.d/luci-app-poe-manager.json:3
+msgid "Control"
+msgstr "管控"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:56
+msgid "Enable PoE"
+msgstr "总开关"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:73
+msgid "Enter a PoE budget between 1 and %s W."
+msgstr "请输入 1 至 %s W 之间的预算值。"
+
+#: luci-app-poe-manager/root/usr/share/rpcd/acl.d/luci-app-poe-manager.json:3
+msgid "Grant LuCI access to PoE control and status"
+msgstr "允许 LuCI 访问 PoE 控制和状态"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:64
+msgid "Leave empty to use the device default PoE budget."
+msgstr "留空使用设备默认预算。"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:51
+#: luci-app-poe-manager/root/usr/share/luci/menu.d/luci-app-poe-manager.json:10
+msgid "PoE Manager"
+msgstr "PoE 控制"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:169
+msgid "PoE LAN link connected"
+msgstr "已连接"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:33
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:170
+msgid "PoE LAN link disconnected"
+msgstr "未连接"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:186
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:193
+msgid "PoE LAN link status"
+msgstr "网口状态"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:186
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:198
+msgid "PoE LAN port"
+msgstr "端口"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:157
+msgid "PoE controller: %s, input voltage: %s V, power budget: %s W"
+msgstr "控制器：%s，输入电压：%s V，功率预算：%s W"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:114
+msgid "PoE debug logging"
+msgstr "调试信息"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:224
+msgid "PoE log"
+msgstr "PoE 日志"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:142
+msgid "PoE log clear failed."
+msgstr "清空日志失败。"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:33
+msgid "PoE not powered"
+msgstr "未供电"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:88
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:186
+msgid "PoE output"
+msgstr "PoE输出"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:90
+msgid "PoE output disabled"
+msgstr "关闭"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:89
+msgid "PoE output enabled"
+msgstr "开启"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:63
+msgid "PoE power budget (W)"
+msgstr "功率预算（W）"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:30
+msgid "PoE power fault"
+msgstr "供电异常"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:28
+msgid "PoE power good"
+msgstr "供电正常"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:32
+msgid "PoE power off"
+msgstr "已关闭"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:186
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:194
+msgid "PoE protocol"
+msgstr "协议"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:174
+msgid "PoE protocol unconfirmed"
+msgstr "未确认"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:186
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:193
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:206
+msgid "PoE status"
+msgstr "PoE状态"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:26
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:170
+msgid "PoE unknown"
+msgstr "未知状态"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:145
+msgid "Unable to clear PoE log: %s"
+msgstr "无法清空 PoE 日志：%s"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:161
+msgid ""
+"Unable to read PoE status. The controller may be unavailable or still "
+"initializing."
+msgstr "无法读取 PoE 状态，控制器可能异常或尚未完成初始化。"
+
+#: luci-app-poe-manager/htdocs/luci-static/resources/view/poe-manager/overview.js:52
+msgid ""
+"Use Save & Apply to apply PoE configuration changes. Power status shows "
+"the current hardware state."
+msgstr ""
+"修改设置后，点击下方“保存并应用”统一生效。供电状态显示设备当前实际状态。"

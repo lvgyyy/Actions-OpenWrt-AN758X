@@ -1,0 +1,4 @@
+{
+	"config": "poe-manager",
+	"init": [ "poe-manager" ]
+}
