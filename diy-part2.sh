@@ -52,4 +52,94 @@ sed -i '58,62d' feeds/luci/applications/luci-app-firewall/htdocs/luci-static/res
 
 sh feeds/fullcone/add_sonic_fullcone.sh
 
+bg2509_modify_platform()
+{
+	local f=target/linux/mediatek/filogic/base-files/lib/upgrade/platform.sh
+	awk '
+	/^platform_do_upgrade[[:space:]]*\(\)/ { in_func=1 }
+	in_func && !done && /^[[:space:]]*case "\$board" in[[:space:]]*$/ {
+		print
+		print "\tbeeconx,bg2509xs-p)"
+		print "\t\tdefault_do_upgrade \"$1\""
+		print "\t\t;;"
+		done=1
+		next
+	}
+	{ print }
+	' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+
+	cat $f
+}
+
+bg2509_modify_network()
+{
+	local f=target/linux/mediatek/filogic/base-files/etc/board.d/02_network
+	awk '
+	/^[[:space:]]*case \$board in[[:space:]]*$/ {
+		n++
+    		print
+    		if (n == 1) {
+        		print "\tbeeconx,bg2509xs-p)"
+        		print "\t\tucidef_set_interfaces_lan_wan \"eth1\" \"eth0\""
+        		print "\t\t;;"
+    		} else if (n == 2) {
+        		print "\tbeeconx,bg2509xs-p)"
+        		print "\t\tlan_mac=$(mtd_get_mac_binary \"art\" 0x0)"
+        		print "\t\twan_mac=$(macaddr_add \"$lan_mac\" 1)"
+        		print "\t\t;;"
+    		}
+    		next
+	}
+	{ print }
+	' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+
+	cat $f
+}
+
+bg2509_modify_leds()
+{
+	local F=target/linux/mediatek/filogic/base-files/etc/board.d/01_leds
+	awk '
+	/^case [$]board in$/ && !done {
+    		print
+    		print "beeconx,bg2509xs-p)"
+    		print "\tucidef_set_led_netdev \"wan1g\" \"WAN 1G\" \"led_wan_1g\" \"eth0\" \"link_10 link_100 link_1000\""
+    		print "\tucidef_set_led_netdev \"wan2p5g\" \"WAN 2P5G\" \"led_wan_2p5g\" \"eth0\" \"link_2500\""
+    		print "\t;;"
+    		done = 1
+    		next
+	}
+	{ print }
+	' "$F" > "$F.tmp" && mv "$F.tmp" "$F"
+
+	cat $F
+}
+
+bg2509_modify_filogic_mk()
+{
+	local F=target/linux/mediatek/image/filogic.mk
+	cat >> "$F" <<'EOF'
+
+define Device/beeconx_bg2509xs-p
+  DEVICE_VENDOR := BeeconX
+  DEVICE_MODEL := BG2509XS-P
+  DEVICE_DTS := mt7987b-beeconx-bg2509xs-p
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_PACKAGES := kmod-phy-airoha-en8811h mt7987-2p5g-phy-firmware kmod-dsa-rtl837x -wpad-openssl luci-app-poe-manager
+  KERNEL_SIZE := 6291456
+  IMAGE_SIZE  := 32112640
+  IMAGES := sysupgrade.bin factory.bin
+  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-rootfs | pad-rootfs | check-size $$(IMAGE_SIZE)
+endef
+TARGET_DEVICES += beeconx_bg2509xs-p
+EOF
+
+	cat $F
+}
+
+bg2509_modify_platform
+bg2509_modify_network
+bg2509_modify_leds
+bg2509_modify_filogic_mk
+
 echo "[diy-part2] 完成"

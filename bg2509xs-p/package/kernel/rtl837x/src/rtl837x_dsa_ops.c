@@ -697,7 +697,7 @@ int rtl837x_setup_dumb_switch(struct rtk_gsw *gsw)
 
 static enum dsa_tag_protocol rtl837x_get_tag_protocol(struct dsa_switch *ds, int port, enum dsa_tag_protocol mprot)
 {
-	return DSA_TAG_PROTO_RTL837X_8021AD;
+	return DSA_TAG_PROTO_MXL862_8021Q;
 }
 
 static int __rtl837x_tag_8021q_vlan_add(struct dsa_switch *ds, int port, u16 vid, u16 flags)
