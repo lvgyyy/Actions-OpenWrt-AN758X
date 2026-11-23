@@ -21,10 +21,9 @@ exit 0
 EOF
 
 rm -rfv package/libs/libnftnl/patches/001-libnftnl-add-fullcone-expression-support.patch
-
 rm -rfv package/network/utils/nftables/patches/004-nftables-add-fullcone-expression-support.patch
-
 rm -rfv target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
+rm -rfv package/network/config/firewall4/patches/130-firewall4-add-support-for-fullcone-nat.patch
 # openwrt-sonic-fullcone
 sh feeds/fullcone/add_sonic_fullcone.sh
 
